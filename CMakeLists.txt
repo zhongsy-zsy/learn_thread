@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.1.0)
 
 project(learn_thread)
 
+add_definitions(-std=c++11)
+
 set( CMAKE_CXX_COMPILER "g++" )
 # set( CMAKE_BUILD_TYPE "Release" )
 set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
@@ -17,12 +19,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 add_executable(learn_1 learn_thread1.cc )
 
+add_executable(learn_mutex learn_mutex.cc )
+
+add_executable(learn_DeadLock learn_productwithcomsume.cc )
+
 
 
 # add_executable(yuzhi common_op.cc )
 
 
 target_link_libraries( learn_1   -lpthread -lm )
+
+target_link_libraries( learn_mutex   -lpthread -lm )
+
+target_link_libraries( learn_DeadLock   -lpthread -lm )
 
 
 
